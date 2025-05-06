@@ -1,22 +1,43 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height">
-    <title>Jerit3787</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Danish Hakim - Web & App Developer, Cybersecurity Analyst. Links to portfolio and social profiles.">
+    <title>Danish Hakim | Links</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="fonts/font-styles.css" rel="stylesheet">
     <link href="fonts/font-Poppins.css" rel="stylesheet">
     <link href="fonts/font-OpenSans.css" rel="stylesheet">
+    <link rel="icon" href="img/profileImg.png" type="image/png">
 </head>
 
-<!-- start of body tag -->
-
 <body>
-    <!-- start of container -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" 
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+            class="moon-icon">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" 
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+            class="sun-icon">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+    </button>
+
     <div class="container">
-        <!-- start of top panel -->
         <div class="profilePanel">
-            <img class="profileImg" height="100px" width="100px" src="img/profileImg.png">
+            <img class="profileImg" height="120px" width="120px" src="img/profileImg.png" alt="Danish Hakim profile picture">
             <h6 class="profileName">Danish Hakim</h6>
             <div class="profileJobs">
                 <p id="profileJob" class="subtitle1">WEB & APP DEVELOPER</p>
@@ -24,61 +45,82 @@
             </div>
             <p id="profileLoc" class="subtitle1">Selangor, MY</p>
             <p id="profileStatus" class="subtitle1">My Passion is about discovering something new!</p>
-            <!-- start of social buttons -->
+            
             <div class="socialButtons">
-                <!-- start of twitter button-->
-                <div class="clickButton" onclick="location.href='https://www.twitter.com/jerit3787';">
-                    <img height="20px" width="20px" src="https://img.icons8.com/android/24/000000/twitter.png " />
+                <div class="clickButton" onclick="window.open('https://www.twitter.com/jerit3787', '_blank')">
+                    <img height="20px" width="20px" src="https://img.icons8.com/android/24/000000/twitter.png" alt="Twitter" />
                     <p id="buttonText" class="subtitle1">@jerit3787</p>
                 </div>
-                <!-- end of twitter button -->
-                <!-- start of github button -->
-                <div class="clickButton" onclick="location.href='https://www.github.com/jerit3787' ; ">
-                    <img height="20px" width="20px"
-                        src="https://img.icons8.com/fluent-systems-filled/24/000000/github.png " />
+                
+                <div class="clickButton" onclick="window.open('https://www.github.com/jerit3787', '_blank')">
+                    <img height="20px" width="20px" src="https://img.icons8.com/fluent-systems-filled/24/000000/github.png" alt="GitHub" />
                     <p id="buttonText" class="subtitle1">@jerit3787</p>
                 </div>
-                <!-- end of github button-->
-                <!-- start of github button -->
-                <div class="clickButton" onclick="location.href='https://www.linkedin.com/in/jerit3787' ; ">
-                    <img width="24" height="24" src="https://img.icons8.com/ios-glyphs/24/linkedin.png"
-                        alt="linkedin" />
+                
+                <div class="clickButton" onclick="window.open('https://www.linkedin.com/in/jerit3787', '_blank')">
+                    <img width="24" height="24" src="https://img.icons8.com/ios-glyphs/24/linkedin.png" alt="LinkedIn" />
                     <p id="buttonText" class="subtitle1">in/jerit3787</p>
                 </div>
-                <!-- end of github button-->
-                <!-- start of email button-->
-                <div class="clickButton" onclick="location.href='mailto:danish.hakim@danplace.tech' ; ">
-                    <img height="20px" width="20px" src="https://img.icons8.com/ios-filled/50/000000/apple-mail.png " />
+                
+                <div class="clickButton" onclick="window.open('mailto:danish.hakim@danplace.tech')">
+                    <img height="20px" width="20px" src="https://img.icons8.com/ios-filled/50/000000/apple-mail.png" alt="Email" />
                     <p id="buttonText" class="subtitle1">danish.hakim@danplace.tech</p>
                 </div>
-                <!-- end of email button -->
             </div>
-            <!-- end of social buttons-->
         </div>
-        <!-- end of top panel button-->
-        <!-- start of panel 1 -->
-        <div class="linkButton" onclick="location.href='https://jerit3787.github.io' ; ">
-            <img height="30px" width="30px" src="https://img.icons8.com/ios-filled/50/000000/portfolio.png " />
+
+        <div class="linkButton" onclick="window.open('https://jerit3787.github.io', '_blank')">
+            <img height="30px" width="30px" src="https://img.icons8.com/ios-filled/50/000000/portfolio.png" alt="Portfolio" />
             <h6 class="buttonText">Portfolio</h6>
         </div>
-        <!-- end of panel 1 -->
-        <!-- start of panel 2 -->
-        <div class="linkButton" onclick="location.href='https://jerit3787.github.io/projects' ; ">
-            <img height="30px" width="30px"
-                src="https://img.icons8.com/material-sharp/24/000000/group-of-projects.png " />
-            <h6 class="buttonText">My projects</h6>
+
+        <div class="linkButton" onclick="window.open('https://jerit3787.github.io/projects', '_blank')">
+            <img height="30px" width="30px" src="https://img.icons8.com/material-sharp/24/000000/group-of-projects.png" alt="Projects" />
+            <h6 class="buttonText">My Projects</h6>
         </div>
-        <!-- end of panel 2 -->
-        <!-- start of panel 2 -->
-        <div class="linkButton" onclick="location.href='https://jerit3787.github.io/ctf' ; ">
-            <img height="30px" width="30px" src="https://img.icons8.com/material-sharp/24/000000/imac-winner.png" />
+
+        <div class="linkButton" onclick="window.open('https://jerit3787.github.io/ctf', '_blank')">
+            <img height="30px" width="30px" src="https://img.icons8.com/material-sharp/24/000000/imac-winner.png" alt="CTF Writeups" />
             <h6 class="buttonText">My CTF Writeup Blog</h6>
         </div>
-        <!-- end of panel 2 -->
     </div>
-    <!-- end of container -->
+
+    <script>
+        // Dark/light mode toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const moonIcon = document.querySelector('.moon-icon');
+        const sunIcon = document.querySelector('.sun-icon');
+        
+        // Check for saved theme preference or use device preference
+        const savedTheme = localStorage.getItem('theme') || 
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        
+        // Apply the initial theme
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcons(savedTheme);
+        
+        // Toggle the theme when button is clicked
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            updateThemeIcons(newTheme);
+        });
+        
+        // Update icons based on current theme
+        function updateThemeIcons(theme) {
+            if (theme === 'dark') {
+                moonIcon.style.display = 'none';
+                sunIcon.style.display = 'block';
+            } else {
+                moonIcon.style.display = 'block';
+                sunIcon.style.display = 'none';
+            }
+        }
+    </script>
 </body>
-<!-- end of body tag -->
 
 </html>
-<!-- end of html tag -->

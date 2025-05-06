@@ -1,29 +1,93 @@
+:root {
+    --bg-color: #f5f5f7;
+    --card-bg: #ffffff;
+    --text-color: #1d1d1f;
+    --accent-color: #0071e3;
+    --secondary-bg: rgba(0, 0, 0, 0.05);
+    --shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    --button-hover: rgba(0, 0, 0, 0.03);
+    --transition-speed: 0.3s;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1d1d1f;
+    --card-bg: #2d2d2f;
+    --text-color: #f5f5f7;
+    --accent-color: #2997ff;
+    --secondary-bg: rgba(255, 255, 255, 0.1);
+    --shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    --button-hover: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
 body {
-    font-family: 'Poppins', 'OpenSans';
-    background: #181818;
-    margin: 10px;
+    font-family: 'Poppins', 'OpenSans', sans-serif;
+    background: var(--bg-color);
+    margin: 0;
+    padding: 20px;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 .container {
-    height: 100%;
+    max-width: 600px;
     width: 100%;
+    padding-bottom: 30px;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--card-bg);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    z-index: 1000;
+    border: none;
+    color: var(--text-color);
+}
+
+.moon-icon,
+.sun-icon {
+    display: block;
+}
+
+.sun-icon {
+    display: none;
 }
 
 .container .profilePanel {
     height: auto;
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: var(--card-bg);
     border-radius: 25px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    padding: 10px 0px;
+    padding: 30px 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 .container .profilePanel .profileImg {
     vertical-align: middle;
-    background-color: rgba(0, 0, 0, .1);
+    background-color: var(--secondary-bg);
     border-radius: 50%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -31,12 +95,22 @@ body {
     margin: 0 auto;
     vertical-align: middle;
     display: inline-block;
+    box-shadow: var(--shadow);
+    border: 4px solid var(--card-bg);
+    transition: transform 0.3s ease;
+    filter: none !important;
+}
+
+.container .profilePanel .profileImg:hover {
+    transform: scale(1.05);
 }
 
 .container .profilePanel .profileName {
     height: auto;
     width: auto;
-    margin: 5px 0px 0px 0px;
+    margin: 15px 0px 5px 0px;
+    color: var(--text-color);
+    font-weight: 600;
 }
 
 .container .profilePanel .profileJobs {
@@ -46,26 +120,49 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    margin-top: 5px;
 }
 
 .container .profilePanel .profileJobs #profileJob {
-    background-color: rgba(0, 0, 0, 0.05);
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+    background-color: var(--secondary-bg);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     width: auto;
     height: auto;
     border-radius: 50px;
-    padding: 0px 5px;
-    margin: 10px 0px 0px 10px;
+    padding: 5px 12px;
+    margin: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text-color);
+    transition: transform 0.3s ease;
+}
+
+.container .profilePanel .profileJobs #profileJob:hover {
+    transform: translateY(-2px);
 }
 
 .container .profilePanel #profileLoc {
-    margin: 10px 0px 0px 0px;
+    margin: 15px 0px 0px 0px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.container .profilePanel #profileLoc:before {
+    content: "📍 ";
+    margin-right: 5px;
 }
 
 .container .profilePanel #profileStatus {
     text-align: center;
-    width: 80%;
-    margin: 10px 0px 0px 0px;
+    width: 90%;
+    margin: 15px 0px 15px 0px;
+    line-height: 1.5;
+    color: var(--text-color);
+    font-style: italic;
+    opacity: 0.9;
 }
 
 .container .profilePanel .socialButtons {
@@ -75,40 +172,192 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
 }
 
 .container .profilePanel .socialButtons .clickButton {
-    background-color: rgba(0, 0, 0, 0.05);
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+    background-color: var(--secondary-bg);
+    box-shadow: var(--shadow);
     width: auto;
     height: auto;
     border-radius: 50px;
-    padding: 5px 10px;
+    padding: 8px 15px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    margin: 10px 0px 0px 10px;
-}
-
-.container .profilePanel .socialButtons .clickButton #buttonText {
-    padding: 0px 0px 0px 5px;
-    margin: 0px;
-}
-
-.container .linkButton {
-    background-color: #FFFFFF;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    border-radius: 25px;
-    padding: 20px 10px;
-    margin-top: 10px;
+    margin: 8px;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
+.container .profilePanel .socialButtons .clickButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.container .profilePanel .socialButtons .clickButton #buttonText {
+    padding: 0px 0px 0px 8px;
+    margin: 0px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.container .profilePanel .socialButtons .clickButton:hover #buttonText {
+    color: white;
+}
+
+.container .linkButton {
+    background-color: var(--card-bg);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.container .linkButton:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.container .linkButton:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.container .linkButton:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.container .linkButton:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    background-color: var(--accent-color);
+}
+
+.container .linkButton:hover .buttonText {
+    color: white;
+}
+
+.container .linkButton:hover img {
+    filter: brightness(5);
+}
+
+.container .linkButton:after {
+    content: "→";
+    position: absolute;
+    right: 20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    color: white;
+}
+
+.container .linkButton:hover:after {
+    opacity: 1;
+    right: 15px;
+}
+
 .container .linkButton .buttonText {
-    margin: 0px 0px 0px 10px;
+    margin: 0px 0px 0px 15px;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Icon handling for dark/light modes */
+[data-theme="dark"] .container .linkButton img,
+[data-theme="dark"] .container .profilePanel .socialButtons .clickButton img {
+    filter: brightness(2) invert(0.8);
+}
+
+/* Adjust icons on hover in dark mode */
+[data-theme="dark"] .container .linkButton:hover img {
+    filter: brightness(5);
+}
+
+.container .linkButton img,
+.container .profilePanel .socialButtons .clickButton img {
+    transition: filter 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container .profilePanel {
+        padding: 20px 10px;
+    }
+
+    .container .profilePanel .socialButtons .clickButton {
+        margin: 5px;
+        padding: 6px 10px;
+    }
+
+    .container .profilePanel .socialButtons .clickButton #buttonText {
+        font-size: 12px;
+    }
+
+    .container .linkButton {
+        padding: 15px;
+    }
+
+    .container .linkButton .buttonText {
+        font-size: 16px;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+    }
+
+    .container .profilePanel,
+    .container .linkButton {
+        box-shadow: none;
+        border: 1px solid #eee;
+    }
+
+    .theme-toggle {
+        display: none;
+    }
 }
